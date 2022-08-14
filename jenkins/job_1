@@ -18,11 +18,17 @@ pipeline {
            echo "this is deploy stage" 
         }
      }
-     stage('TESTING') {
+     stage('TESTING1') {
        agent { label 'slave2' }
          steps {
            echo "this is testing stage"
          }  
      }
+     stage('TESTING2') {
+       agent { label 'master' }
+         steps {
+           echo "testing done"
+         }
+     }    
   }
 }
